@@ -69,7 +69,7 @@ RSpec.describe Transaction, type: :request do
     let(:receiver_iban) { receiver.bank_account.iban }
     let(:params) { { iban: receiver_iban, amount: amount } }
 
-    it 'returns redirects to transactions page with success' do
+    it 'returns redirects to new transactions page with error displayed' do
       sign_in(sender)
 
       post "#{base_url}", params: params
