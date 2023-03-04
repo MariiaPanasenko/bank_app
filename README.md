@@ -54,7 +54,7 @@ $ rails s
 #### Run all tests:
 
 ```
-$ rspec spec/models
+$ rspec spec/
 
 $ rails s
 ```
