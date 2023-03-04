@@ -19,7 +19,7 @@ Bank account belongs to a user, a user can have one bank account.
 > in seeds.rb
 ### Operations in terminal
 
-#### Add a client:
+#### Add a user:
  ```
  $ rails c
  $ User.create!(first_name: "John", last_name: "Doe", email: 'test_email@mail.com', password: 'password') 
@@ -37,6 +37,15 @@ Bank account belongs to a user, a user can have one bank account.
  ```
 
 > default balance is 0.00
+
+
+#### Get User Iban:
+ ```
+ $ rails c
+ $ user = User.find_by(email: 'test_email@mail.com') 
+ $ user.bank_account.iban
+ $ exit
+ ```
 
 #### Delete history of transactions:
 ```
