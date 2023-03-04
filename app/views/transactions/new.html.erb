@@ -1,0 +1,28 @@
+<div class="container">
+  <% flash.each do |_type, msg|%>
+    <div class="alert alert-danger">
+      <%= msg %>
+    </div>
+  <% end %>
+  <%= form_tag transactions_path do %>
+    <h4 class="mb-3">Payment</h4>
+    <div class="row gy-3">
+      <div class="col-md-6">
+        <label for="cc-name" class="form-label">Iban</label>
+        <input type="text" class="form-control" id="cc-name" name="iban">
+        <small class="text-muted">Iban as displayed on card</small>
+      </div>
+      <div class="col-md-3">
+        <label for="cc-expiration" class="form-label">Amount</label>
+        <input type="text" class="form-control" id="cc-expiration" placeholder="" required="" name="amount">
+        <div class="invalid-feedback">
+          Expiration date required
+        </div>
+      </div>
+    </div>
+    <br>
+    <button class="w-50 btn btn-primary btn-lg" type="submit">Process transfer</button>
+  <% end %>
+  <br>
+  <%= button_to "Back to home page", transactions_path, class: "w-25 btn btn-secondary btn-lg", method: :get %>
+</div>

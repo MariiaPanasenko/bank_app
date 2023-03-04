@@ -1,0 +1,23 @@
+<div class="container">
+  <h1>Hello, <%= current_user.first_name %>!</h1>
+  <br>
+  <h4>Your balance is <%= current_user.balance %></h4>
+  <br>
+  <%= link_to "New Bank Transfer", new_transaction_path, class: "btn btn-success", style: "width: 200px;" %>
+  <br><br>
+  <div>
+    <ul class="list-group">
+      <% current_user.transactions.each do |transaction| %>
+        <li class="row list-group-item">
+          <div class="col-md-2">
+            <%= transaction.amount %>
+          </div>
+          <div class="col-md-offset-2 text-end">
+            <%= transaction.created_at.to_s %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
