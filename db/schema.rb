@@ -28,18 +28,17 @@ ActiveRecord::Schema.define(version: 2023_03_01_121916) do
   create_table "transactions", force: :cascade do |t|
     t.decimal "amount", null: false
     t.bigint "bank_account_id", null: false
-    t.string "transaction_id", null: false
+    t.string "transaction_uuid", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["bank_account_id"], name: "index_transactions_on_bank_account_id"
-    t.index ["transaction_id"], name: "index_transactions_on_transaction_id"
+    t.index ["transaction_uuid"], name: "index_transactions_on_transaction_uuid"
   end
 
   create_table "users", force: :cascade do |t|
     t.string "email", null: false
     t.string "first_name", null: false
     t.string "last_name", null: false
-    t.string "iban"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "encrypted_password", default: "", null: false

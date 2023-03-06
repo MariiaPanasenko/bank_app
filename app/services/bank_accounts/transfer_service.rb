@@ -43,8 +43,8 @@ module BankAccounts
     def create_transactions
       uuid = SecureRandom.uuid
 
-      @incoming_transaction = receiver.transactions.create!(amount: amount, transaction_id: uuid)
-      @outgoing_transaction = sender.transactions.create!(amount: -amount, transaction_id: uuid)
+      @incoming_transaction = receiver.transactions.create!(amount: amount, transaction_uuid: uuid)
+      @outgoing_transaction = sender.transactions.create!(amount: -amount, transaction_uuid: uuid)
     end
 
     def change_balance

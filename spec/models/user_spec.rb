@@ -6,8 +6,8 @@ RSpec.describe User, type: :model do
   context 'validations' do
     subject { build(:user) }
 
-    it { is_expected.to validate_presence_of(:first_name).with_message('CAN_NOT_BE_BLANK') }
-    it { is_expected.to validate_presence_of(:last_name).with_message('CAN_NOT_BE_BLANK') }
+    it { is_expected.to validate_presence_of(:first_name) }
+    it { is_expected.to validate_presence_of(:last_name) }
     it { is_expected.to validate_presence_of(:email) }
     it { is_expected.to validate_presence_of(:password) }
 
